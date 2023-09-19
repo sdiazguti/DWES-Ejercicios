@@ -40,8 +40,11 @@ class Avion extends ElementoVolador{
     }
 
     public function volar($altitud){
-        if ($altitud>0 && $altitud<$this->altitudMaxima) {
-            if (parent::getVelocidad()>=150) {
+
+
+
+        if ($altitud>=0 && $altitud<$this->getAltitudMaxima()) {
+            if ($this->getVelocidad()>=150) {
                 for (parent::getAltitud(); parent::getAltitud() <= $altitud; parent::setAltitud(parent::$getAltitud()+100)) { 
                     return "Altitud incrementada en 100 ".parent::getAltitud(); 
                 }
@@ -55,11 +58,11 @@ class Avion extends ElementoVolador{
 
     public function mostrarInformacion(){
 
-        return"Nombre: ".parent::getNombre()."<br>
-        Numero de alas: ".parent::getNumAlas()."<br>
-        Numero de motores: ".parent::getNumMotores()."<br>
-        Altitud: ".parent::getAltitud()."<br>
-        Velocidad: ".parent::getVelocidad()."<br>
+        return"Nombre: ".$this->getNombre()."<br>
+        Numero de alas: ".$this->getNumAlas()."<br>
+        Numero de motores: ".$this->getNumMotores()."<br>
+        Altitud: ".$this->getAltitud()."<br>
+        Velocidad: ".$this->getVelocidad()."<br>
         Nombre compañia: ".$this->getCompaniaAerea."<br>
         Fecha de alta: ".$this->getFechaAlta."<br>
         Altitud maxima: ".$this->getAltitudMaxima."<br>";

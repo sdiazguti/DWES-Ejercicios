@@ -1,6 +1,6 @@
 <?php
 
-abstract class ElementoVolador{
+abstract class ElementoVolador implements Volador{
 
     private $nombre;
     private $numAlas;

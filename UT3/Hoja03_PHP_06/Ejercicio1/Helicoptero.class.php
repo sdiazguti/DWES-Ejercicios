@@ -39,10 +39,10 @@ class Helicoptero extends ElementoVolador{
 
     public function volar($altitud){
 
-        if (($altitud*$this->getNRotor)>(100*$this->getNRotor)) {
-            while (parent::$getAltitud <= $altitud) {
-                parent::$setAltitud(parent::$getAltitud+20);
-                return"Altitud incrementada en 20".parent::$getAltitud;
+        if ($altitud < (100* $this->nRotor)) {
+            while ($this->$getAltitud() <= $altitud) {
+                $this->$setAltitud($this->$getAltitud()+20);
+                return"Altitud incrementada en 20".$this->$getAltitud();
             }
         }else{
             return"Error la altitud no puede superar 100";
@@ -52,11 +52,11 @@ class Helicoptero extends ElementoVolador{
 
     public function mostrarInformacion(){
 
-        return"Nombre: ".parent::getNombre()."<br>
-        Numero de alas: ".parent::getNumAlas()."<br>
-        Numero de motores: ".parent::getNumMotores()."<br>
-        Altitud: ".parent::getAltitud()."<br>
-        Velocidad: ".parent::getVelocidad()."<br>
+        return"Nombre: ".$this->getNombre()."<br>
+        Numero de alas: ".$this->getNumAlas()."<br>
+        Numero de motores: ".$this->getNumMotores()."<br>
+        Altitud: ".$this->getAltitud()."<br>
+        Velocidad: ".$this->getVelocidad()."<br>
         Nombre propietario: ".$this->getPropietario."<br>
         Fecha de alta: ".$this->getNRotor."<br>";
 

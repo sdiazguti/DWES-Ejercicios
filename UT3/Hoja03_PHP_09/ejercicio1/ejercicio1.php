@@ -1,3 +1,10 @@
+<?php
+$coches = array(
+    'seat' =>array ('Ibiza', 'León', 'Alhambra', 'Arona', 'Ateca', 'Tarraco'),
+    'ford' =>array ('Kuga', 'Ka', 'Fiesta', 'Focus', 'Ranger', 'Bronco'),
+    'bmw' =>array('m3', 'x6', 'm2', 'x1', 'x2', 'i8')
+);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,49 +13,72 @@
 </head>
 <body>
 <h1>Busca tu coche</h1>
-<form calss="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<?php
+
+if (isset($_POST['actualizar'])) {
+    $cochesActualizados=$_POST['cocheActualizado'];
+    $marca = $_POSt['marca'];
+    $i=0;
+    foreach ($concesionario[$marca] as $cocheOriginal) {
+        if ($cocheOriginal!=$cochesActualizados[$i]) {
+            echo ">div class='aviso'>Se ha actualizado $cocheOriginal por $cochesActualizados</div>";
+            $i++;
+        }
+    }
+}
+
+?>
+<form calss="formulario" action="" method="post">
 <label for="marca">Marca:*</label>
 <select name="marca">
-  <option value="seat"selected>Seat</option>
-  <option value="ford">Ford</option>
-  <option value="bmw">BMW</option>
+    <?php
+
+    foreach ($coches as $marca => $modelo) {
+        echo"<option value='$marca'";
+        if (isset($_POST['marca']) && $_POST['marca'] == $marca) {
+            echo "select>$marca</option>";
+        }else{
+            echo"$marca</option>";
+        }
+    }
+    
+    ?>
 </select>
 <input type="submit" name="mostrar" id="mostrar">
 </form>
 <?php
-$coches = array(
-    'seat' =>array ('Ibiza', 'León', 'Alhambra', 'Arona', 'Ateca', 'Tarraco'),
-    'ford' =>array ('Kuga', 'Ka', 'Fiesta', 'Focus', 'Ranger', 'Bronco'),
-    'bmw' =>array('m3', 'x6', 'm2', 'x1', 'x2', 'i8')
-);
- if (isset($_POST['mostrar'])) {
-    $marca=$_POST['marca'];
-    
+
+ if (isset($_POST['mostrar'])) { 
 
     echo "<table><tr><th>COCHE</th></tr>";
-    echo"<form action='ejercicio1.php' metod='post'>";
+    echo"<form action='' metod='post'>";
 foreach ($coches as $nombreMarca => $modelos) {
     
     for ($i=0; $i < sizeof($modelos) ; $i++) { 
         
-        if (strtolower($nombreMarca) === strtolower($marca)) {
+        if (strtolower($nombreMarca) === strtolower($_POST['marca'])) {
 
             echo"<tr><th><input type='text' value='$modelos[$i]' id='modelo$i' name='modelo$i'></th></tr>";
-    
-        }else{
-           
+            
         }
+        
     }
     
 }
-
 echo"</table>";
 echo "<input type='submit' name='actualizar' value='Actualizar'></form>";
+
+}
+
+ ?>
+
+<?php
+// usar type="hiden" para mantener daot sactualizaods
 
 if (isset($_POST['actualizar'])) {
     $marca=$_POST['marca'];
     echo "<table><tr><th>COCHE</th></tr>";
-    echo"<form action='ejercicio1.php' metod='post'>";
+    echo"<form action='' metod='post'>";
     foreach ($coches as $nombreMarca => $modelos) {
     
         for ($i=0; $i < sizeof($modelos) ; $i++) { 
@@ -68,12 +98,9 @@ if (isset($_POST['actualizar'])) {
     }
 }
 
-echo"</table>";
-echo "<input type='submit' name='actualizar' value='Actualizar'></form>";
 
-}
- else {
- ?>
-<?php } ?>
+
+
+?>
 </body>
 </html>

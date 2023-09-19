@@ -11,12 +11,30 @@ table, th {
 </head>
 <body>
 <?php
+
+/*
     $clubs = array(
-        'madrid' =>array ('entrenador' =>array('zidane'=>'../jugadores/zidane.jpg'),
-                          'jugadores'=>array('courtois'=>'../jugadores/courtois.jpg', 'hazard' =>'../jugadores/hazard.jpg', 'ramos'=> '../jugadores/ramos.jpg')
+        'madrid' =>array (
+          'entrenador' =>array('nombre'=>'zidane','ruta'=>'../jugadores/zidane.jpg'),
+          'jugadores'=>array(
+            array('nombre'=>'courtois','ruta'=>'../jugadores/courtois.jpg'),
+            array('nombre'=>'ramos','ruta'=>'../jugadores/ramos.jpg'),
+            array('nombre'=>'hazard','ruta'=>'../jugadores/hazard.jpg')
     ),
-    'barcelona' =>array ('entrenador' =>array('koeman'=>'../jugadores/koeman.jpg'),
-                      'jugadores'=>array('ter stegen'=>'../jugadores/ter.jpg', 'griezmann' =>'../jugadores/griezmann.jpg', 'pique'=> '../jugadores/pique.jpg')
+    'barcelona' =>array (
+          'entrenador' =>array('koeman'=>'../jugadores/koeman.jpg'),
+          'jugadores'=>array('ter stegen'=>'../jugadores/ter.jpg', 'griezmann' =>'../jugadores/griezmann.jpg', 'pique'=> '../jugadores/pique.jpg')
+)
+    );
+*/
+    $clubs = array(
+        'madrid' =>array (
+          'entrenador' =>array('zidane'=>'../jugadores/zidane.jpg'),
+          'jugadores'=>array('courtois'=>'../jugadores/courtois.jpg', 'hazard' =>'../jugadores/hazard.jpg', 'ramos'=> '../jugadores/ramos.jpg')
+    ),
+    'barcelona' =>array (
+          'entrenador' =>array('koeman'=>'../jugadores/koeman.jpg'),
+          'jugadores'=>array('ter stegen'=>'../jugadores/ter.jpg', 'griezmann' =>'../jugadores/griezmann.jpg', 'pique'=> '../jugadores/pique.jpg')
 )
     );
  ?>
