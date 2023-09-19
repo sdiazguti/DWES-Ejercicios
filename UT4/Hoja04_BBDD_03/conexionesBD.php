@@ -3,7 +3,7 @@
 define("HOST", "localhost");
 define("USERNAME", "root");
 define("PASSWORD", "mysql");
-define("DATABASE", "dwes_02_libros");
+define("DATABASE", "dwes_03_funicular");
 
 function getConexion(){
 

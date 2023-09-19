@@ -8,6 +8,9 @@ require_once('funcionesBD.php');
 <title>Ejercicio 2 Libros</title>
 <link rel="stylesheet" href="../css/estilo.css">
 <style>
+  table, th, td {
+  border:1px solid black;
+}
 </style>
 </head>
 <body>
@@ -20,18 +23,15 @@ require_once('funcionesBD.php');
     <th>PRECIO</th>
     <th>FECHA DE ADQUISICIÓN</th>
   </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-    </tr>
+    
     <?php
     $libros = getLibros();
     foreach ($libros as $libro) {
-        echo"<td>".$libro['numero_ejemplar']."</td>"."<td>".$libro['titulo']."</td>"."<td>".$libro['anyo_edicion']."</td>"."<td>".$libro['precio']."</td>"."<td>".$libro['fecha_adquisicion']."</td>";
+      
+        echo"<tr><td>".$libro['numeroEjemplar']."</td>"."<td>".$libro['titulo']."</td>"."<td>".$libro['anyoEdicion']."</td>"."<td>".$libro['precio']."</td>"."<td>".$libro['fechaAdquisicion']."</td></tr>";
     }
     ?>
-    </tr>
+    
 </table>
 </body>
 </html>

@@ -1,6 +1,4 @@
-<?php
-require_once('funcionesBD.php');
-?>
+
 
 <!DOCTYPE html>
 <html>
